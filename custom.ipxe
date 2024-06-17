@@ -3,10 +3,15 @@
 ### netboot.xyz-custom menu
 ###
 
-:start
-echo Hello world!
-sleep 10
-goto custom_exit
+#:start
+#echo Hello world!
+#sleep 10
+#goto custom_exit
+sanboot --no-describe --drive 0x81 http://192.168.218.10/ventoy.iso
 
+# in iPXE env do
+# CTRL-B - cmdline
+# dhcp
+# chain --autofree http://192.168.218.10/boot.ipxe
 :custom_exit
 exit 0
